@@ -1,0 +1,60 @@
+// Content - Typography
+body{
+	line-height: 1.5;
+}
+
+// Paragraph
+p{ 
+	font-size: 1.05rem;
+	margin: 0 0 1.6rem; 
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6, p{ display: block; }
+h1{ font-size: 2.6rem; margin: 0 0 .95rem; }
+h2{ font-size: 2.2em; margin: 1.3em 0 0.6rem; }
+h3{ font-size: 1.75rem; margin: 1.5em 0 0.5rem; }
+h4{ font-size: 1.45rem; margin: 1.5em 0 0.5rem; }
+h5{ font-size: 1.2rem; margin: 1.5em 0 0.5rem; }
+h6{ font-size: .95rem; margin: 1.5em 0 0.5rem; }
+
+// Article
+article{
+	p{ max-width: 66%; }
+}
+
+/* Responsive */
+
+// Mobile
+@media(max-width: $max-width-mobile){ 
+	html{ font-size: 13px; }
+	p{ font-size: 1.3em; }
+	article{ 
+		p{ 
+			font-size: 1.3em;
+			max-width: 100%;
+		} 
+	}
+}
+// Mobile / Tablet
+@media(min-width: $max-width-mobile) and (max-width: $max-width-mobile-tablet){ 
+	html{ font-size: 14px; }
+	article{ 
+		p{ 
+			font-size: 1.2rem;
+			max-width: 80%;
+		} 
+	}
+}
+// Tablet
+@media(min-width: $max-width-mobile-tablet) and (max-width: $max-width-tablet){ 
+	html{ font-size: 16px; }
+}
+// Desktop
+@media(min-width: $max-width-tablet) and (max-width: $max-width-desktop){ 
+	html{ font-size: 16px; }
+}
+// Large Desktop
+@media(min-width: $max-width-desktop){ 
+	html{ font-size: 16px; }
+}

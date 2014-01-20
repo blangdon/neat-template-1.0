@@ -1,0 +1,27 @@
+{
+  "name": "learn-bourbon",
+  "version": "1.0.0",
+  "description": "learn-bourbon =============",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blangdon/learn-bourbon.git"
+  },
+  "author": "Brad Langdon",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/blangdon/learn-bourbon/issues"
+  },
+  "homepage": "https://github.com/blangdon/learn-bourbon",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-svgmin": "~0.3.0",
+    "grunt-grunticon": "~1.0.0-beta.0"
+  }
+}
