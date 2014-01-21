@@ -1,0 +1,47 @@
+// Modules - Typography
+
+// REM / pixel fallback
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16.25}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
+}
+/* 
+Usage:
+	div{
+		@include rem-fallback(margin, 10, 20, 30, 40);
+		@include rem-fallback(font-size, 1.05);
+	}
+Output:
+	div{
+		margin: 160px 320px 480px 640px;
+		margin: 10rem 20rem 30rem 40rem;
+		font-size: 17.0625px;
+		font-size: 1.05rem;
+	}
+*/

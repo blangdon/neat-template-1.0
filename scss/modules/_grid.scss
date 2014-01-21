@@ -1,0 +1,8 @@
+// Modules - Grid
+
+// Set breakpoints
+$mobile: new-breakpoint(max-width 479px);
+$mobile-tablet: new-breakpoint(min-width 480px max-width 767px);
+$tablet: new-breakpoint(min-width 768px max-width 979px);
+$desktop: new-breakpoint(min-width 980px max-width 1199px);
+$desktop-large: new-breakpoint(min-width 1200px);
