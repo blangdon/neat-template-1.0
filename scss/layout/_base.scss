@@ -1,14 +1,65 @@
 // -------------------------------------------------------------------------
 // Layout - Base
 // -------------------------------------------------------------------------
+body{
+	@include rem-fallback(padding, 1.5);
+}
 .container{
 	@include outer-container;
-	@include rem-fallback(padding, 2);
 }
 section{
 	@include row();
-	@include span-columns(10);
-}
-div{
-	@include span-columns(2);
+	@include span-columns(12);
+	ul.block{
+		padding: 0;
+		li{
+			@include span-columns(3);
+			@include omega(4n);
+			list-type: none;
+			display: block;
+			float: left;
+			margin-bottom: 2.5%;
+			@include rem-fallback(height, 10);
+			@include rem-fallback(padding, 1.5);
+			border: 1px solid lighten($color-black, 70%);
+		}
+		&.cross{
+			li{
+				@include box-sizing(content-box);
+				@include span-columns(3);
+				@include omega(4n);
+				margin: 0;
+				padding: .83%;
+				border: 0 none;
+				border-right: 1px solid lighten($color-black, 70%);
+				border-bottom: 1px solid lighten($color-black, 70%);
+					@include media($mobile-tablet){
+						padding: .73%;
+					}
+					@include media($mobile){
+						@include span-columns(6);
+						@include omega(2n);
+						padding: .33%;
+						margin: 0;
+					}
+			}
+			.logo-4, .logo-8, .logo-12{
+				border-right: 0 none;
+			}
+			.logo-9, .logo-10, .logo-11, .logo-12{
+				border-bottom: 0 none;
+			}
+				@include media($mobile){
+					.logo-2, .logo-4, .logo-6, .logo-8, .logo-10, .logo-12{
+						border-right: 0 none;
+					}
+					.logo-9, .logo-10{
+						border-bottom: 1px solid lighten($color-black, 70%);
+					}
+					.logo-11, .logo-12{
+						border-bottom: 0 none;
+					}
+				}
+		}
+	}
 }
