@@ -1,5 +1,14 @@
+// -------------------------------------------------------------------------
 // Layout - Base
-body{
+// -------------------------------------------------------------------------
+.container{
 	@include outer-container;
 	@include rem-fallback(padding, 2);
+}
+section{
+	@include row();
+	@include span-columns(10);
+}
+div{
+	@include span-columns(2);
 }

@@ -1,23 +1,28 @@
 // Bourbon and Neat
-@import 'bourbon/bourbon';
-@import "neat/neat";
+@import "bourbon/_bourbon";
+@import "neat/_neat";
+@import "neat/_neat-helpers";
+
+// Neat Settings
+@import "neat/settings/_grid";
+@import "neat/settings/_visual-grid";
 
 // Modules
-@import "modules/_color.scss";
-@import "modules/_grid.scss";
-@import "modules/_typography.scss";
+@import "modules/_color";
+@import "modules/_grid";
+@import "modules/_typography";
 
 // Layout
-@import "layout/_article.scss";
-@import "layout/base.scss";
-@import "layout/comments.scss";
-@import "layout/_footer.scss";
-@import "layout/_header.scss";
-@import "layout/_nav.scss";
-@import "layout/_sidebar.scss";
+@import "layout/_article";
+@import "layout/base";
+@import "layout/comments";
+@import "layout/_footer";
+@import "layout/_header";
+@import "layout/_nav";
+@import "layout/_sidebar";
 
 // Content
-@import "content/_buttons.scss";
-@import "content/_forms.scss";
-@import "content/_images.scss";
-@import "content/_typography.scss";
+@import "content/_buttons";
+@import "content/_forms";
+@import "content/_images";
+@import "content/_typography";
