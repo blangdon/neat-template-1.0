@@ -1,8 +1,11 @@
 // -------------------------------------------------------------------------
 // Layout - Base
 // -------------------------------------------------------------------------
+html{
+	background: $color-white;
+}
 body{
-	@include rem-fallback(padding, 1.5);
+	@include rem-fallback(padding, 2.5, 1.5);
 }
 .container{
 	@include outer-container;
@@ -10,6 +13,10 @@ body{
 section{
 	@include row();
 	@include span-columns(12);
+	// grid type layout wit borders
+	ul{ 
+		padding-left: 0;
+	}
 	ul.block{
 		padding: 0;
 		li{
@@ -21,8 +28,14 @@ section{
 			margin-bottom: 2.5%;
 			@include rem-fallback(height, 10);
 			@include rem-fallback(padding, 1.5);
-			border: 1px solid lighten($color-black, 70%);
+			border: 1px solid darken($color-white, 13%);
+			*[class*='icon-']{
+				background-position: center;
+				@include size(100%);
+			}
 		}
+		// same grid layout with a 'cross' grid, this type of layout takes manual tweaking of padding 
+		// for each break point and reverting back to 'content-box' layout.
 		&.cross{
 			li{
 				@include box-sizing(content-box);
@@ -31,8 +44,11 @@ section{
 				margin: 0;
 				padding: .85%;
 				border: 0 none;
-				border-right: 1px solid lighten($color-black, 70%);
-				border-bottom: 1px solid lighten($color-black, 70%);
+				border-right: 1px solid darken($color-white, 13%);
+				border-bottom: 1px solid darken($color-white, 13%);
+				&:hover{
+					background-color: darken($color-white, 6%);
+				}
 					@include media($desktop){
 						padding: .84%;
 					}
@@ -44,14 +60,31 @@ section{
 						@include omega(2n);
 						padding: .5%;
 						margin: 0;
+						&:hover{
+							background-color: transparent;
+						}
+						*[class*='icon-']{
+							background-position: center;
+							@include size(90%);
+							margin: 5%;
+						}
 					}
 					@include media($mobile){
 						@include span-columns(6);
 						@include omega(2n);
 						padding: .5%;
 						margin: 0;
+						&:hover{
+							background-color: transparent;
+						}
+						*[class*='icon-']{
+							background-position: center;
+							@include size(80%);
+							margin: 10%;
+						}
 					}
 			}
+			// manually turn certain brders off for each breakpoint
 			.logo-4, .logo-8, .logo-12{
 				border-right: 0 none;
 			}
@@ -63,7 +96,7 @@ section{
 						border-right: 0 none;
 					}
 					.logo-9, .logo-10{
-						border-bottom: 1px solid lighten($color-black, 70%);
+						border-bottom: 1px solid darken($color-white, 13%);
 					}
 					.logo-11, .logo-12{
 						border-bottom: 0 none;
@@ -74,7 +107,7 @@ section{
 						border-right: 0 none;
 					}
 					.logo-9, .logo-10{
-						border-bottom: 1px solid lighten($color-black, 70%);
+						border-bottom: 1px solid darken($color-white, 13%);
 					}
 					.logo-11, .logo-12{
 						border-bottom: 0 none;

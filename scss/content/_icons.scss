@@ -1,0 +1,17 @@
+// -------------------------------------------------------------------------
+// Content - Icons
+// -------------------------------------------------------------------------
+
+// Without text
+*[class*='icon-']{
+	background-size: contain;
+	-ms-behavior: url(/backgroundsize.min.htc);
+	display: block;
+	@include hide-text;
+}
+// With text
+.icon-text{
+	// em instead of rem to keep the padding relaive to the current element font size
+	// this way the icon paddinng will adjust with the fint size
+	padding: 0 0 0.2em 2em;
+}
