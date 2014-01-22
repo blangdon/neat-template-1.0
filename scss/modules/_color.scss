@@ -11,3 +11,13 @@ $color-aqua-grey: #c1dada;
 $color-purple: #8100db;
 $color-green: #00c32e;
 $color-yellow: #e6d628;
+
+/* Opacity Mixin */
+@mixin opacity($opacity){
+	$opacity-percentage: $opacity * 100;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity-percentage)";
+	filter: alpha(opacity=$opacity-percentage);
+	-moz-opacity: $opacity;
+	-khtml-opacity: $opacity;
+	opacity: $opacity;
+}

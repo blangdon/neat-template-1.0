@@ -8,10 +8,33 @@
 	-ms-behavior: url(/backgroundsize.min.htc);
 	display: block;
 	@include hide-text;
+	@include transition (all .1s ease-in-out);
 }
 // With text
 .icon-text{
 	// em instead of rem to keep the padding relaive to the current element font size
 	// this way the icon paddinng will adjust with the fint size
 	padding: 0 0 0.2em 2em;
+}
+// With a circle border
+.icon-circle{
+	float: left;
+	border-radius: 100%;
+	border: .2em solid #000;
+	background-size: 58%;
+	background-position: center;
+	cursor: pointer;
+	@include opacity(.9);
+	@include box-sizing(content-box);
+	@include hide-text;
+	@include rem-fallback(margin, 0,1,1,0);
+	@include rem-fallback(width, 3);
+	@include rem-fallback(height, 3);
+	&:hover{
+		background-size: 54%;
+		@include opacity(1);
+		@include rem-fallback(width, 3.2);
+		@include rem-fallback(height, 3.2);
+		// border-color: $color-aqua;
+	}
 }
