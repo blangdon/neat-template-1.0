@@ -1,3 +1,33 @@
 // -------------------------------------------------------------------------
 // Content - Buttons
 // -------------------------------------------------------------------------
+
+.button-plain{
+	// bg-color, font-color, text-shadow color
+	@include button-plain($color-blue, lighten($color-blue, 50%), darken($color-blue, 18%));
+}
+.button-gradient{
+	// gradient-top, gradient-bottom, font-color, text-shadow color
+	@include button-gradient(lighten($color-blue, 5%), $color-blue, lighten($color-blue, 50%), darken($color-blue, 18%));
+}
+.button-rounded{
+	border-radius: .35em;
+}
+// icon buttons - these need to be updated manually class by class unlike the non buttion icons / icons with text,
+// which are compiled using Grunt
+*[class*='button-icon-']{
+	display: inline-block;
+	padding-right: 3.8em;
+	position: relative;
+	&.button-icon-arrow-1:before { 
+		background: url(../img/icon/svg/arrow-1-min.svg) no-repeat; 
+		background-size: contain;
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-position: right .5em center;
+		top: 0;
+		right: 0;
+	}
+}

@@ -1,0 +1,84 @@
+// -------------------------------------------------------------------------
+// Modules - Buttons
+// -------------------------------------------------------------------------
+
+// General button styles
+*[class*='button-']{
+	font-family: "Helvetica", sans-serif;
+	@include transition (all .1s ease-in-out);
+	padding: .6em .9em;
+	margin: 0 .7em .7em 0;
+	@include rem-fallback(font-size, .95);
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: .02rem;
+}
+
+// Regular button
+@mixin button-plain($bg-color, $font-color, $text-shadow) {
+	color: $font-color;
+	text-shadow: .1em .1em .08em $text-shadow;
+	background: $bg-color;
+	border: 1px solid darken($bg-color, 10%);
+	-moz-box-shadow:    inset 0 .1em 0 lighten($bg-color, 10%);
+  	-webkit-box-shadow: inset 0 .1em 0 lighten($bg-color, 10%);
+  	box-shadow:         inset 0 .1em 0 lighten($bg-color, 10%);
+	&:hover{
+		background: darken($bg-color, 3.5%);
+	}
+	&:active{
+		background: darken($bg-color, 6%);
+	}
+}
+
+// Gradient button
+@mixin button-gradient($top_color, $bottom_color, $font-color, $text-shadow) {
+	color: $font-color;
+	text-shadow: .1em .1em .08em $text-shadow;
+	@include linear-gradient($top_color, $bottom_color);
+	border: 1px solid darken($bottom-color, 10%);
+	-moz-box-shadow:    inset 0 .1em 0 lighten($top-color, 10%);
+  	-webkit-box-shadow: inset 0 .1em 0 lighten($top-color, 10%);
+  	box-shadow:         inset 0 .1em 0 lighten($top-color, 10%);
+	&:hover{
+		// css transitions don't work with gradient bg's. If transition is needed switch teh below to
+		// an opacity fade instead
+		@include linear-gradient(darken($top_color, 3.5%), darken($bottom_color, 3.5%));
+	}
+	&:active{
+		@include linear-gradient(darken($bottom_color, 3.5%), darken($top_color, 3.5%));
+	}
+}
+
+// -------------------------------------------------------------------------
+// Responsive
+// -------------------------------------------------------------------------
+
+// Mobile
+@include media($mobile){
+	*[class*='button-']{
+		@include rem-fallback(font-size, 1.2);
+	}
+}
+// Mobile / Tablet
+@include media($mobile-tablet){
+	*[class*='button-']{
+		@include rem-fallback(font-size, 1.1);
+	}
+}
+// Tablet
+@include media($tablet){
+	*[class*='button-']{
+		@include rem-fallback(font-size, 1);
+	}
+}
+// Desktop
+@include media($desktop){
+	html{ font-size: 100%; }
+}
+// Large Desktop
+@include media($desktop-large){
+	html{ font-size: 100%; }
+}

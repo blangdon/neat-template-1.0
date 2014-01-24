@@ -11,6 +11,7 @@
 @import "modules/_color";
 @import "modules/_grid";
 @import "modules/_typography";
+@import "modules/_buttons";
 
 // Layout
 @import "layout/_article";
@@ -22,8 +23,8 @@
 @import "layout/_sidebar";
 
 // Content
-@import "content/_buttons";
 @import "content/_forms";
 @import "content/_images";
 @import "content/_typography";
 @import "content/_icons";
+@import "content/_buttons";
