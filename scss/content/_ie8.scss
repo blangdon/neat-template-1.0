@@ -1,0 +1,15 @@
+// -------------------------------------------------------------------------
+// IE8
+// -------------------------------------------------------------------------
+
+.lt-ie9{
+	// Circle icons - Remove border
+	.icon-circle{
+		border: 0 none;
+		@include hide-text;
+	}
+	// Icon buttons - remove padding as icons willnot show
+	*[class*='button-icon-']{
+		
+	}
+}

@@ -7,7 +7,6 @@
 	background-size: contain;
 	-ms-behavior: url(/backgroundsize.min.htc);
 	display: block;
-	@include hide-text;
 	@include transition (all .1s ease-in-out);
 }
 // With text
@@ -27,6 +26,7 @@
 	@include opacity(.9);
 	@include box-sizing(content-box);
 	@include hide-text;
+	font-size: inherit;
 	@include rem-fallback(margin, 0,1,1,0);
 	@include rem-fallback(width, 3);
 	@include rem-fallback(height, 3);
