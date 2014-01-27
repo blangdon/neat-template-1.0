@@ -19,15 +19,18 @@
 	display: inline-block;
 	padding-right: 3.8em;
 	position: relative;
-	&.button-icon-arrow-1:before { 
-		background: url(../img/icon/svg/arrow-1-min.svg) no-repeat; 
-		background-size: contain;
+	&:before { 
 		content: "";
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		background-position: right .5em center;
 		top: 0;
 		right: 0;
+	}
+	// individual background icons for each button
+	&.button-icon-arrow-1:before{
+		background: url(../img/icon/svg/arrow-1-min.svg) no-repeat;
+		background-size: contain;
+		background-position: right .5em center;
 	}
 }
